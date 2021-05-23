@@ -161,7 +161,8 @@
 
       $('#txt').focus();
       $('#txt').bind('input propertychange', function() {
-        var sentiment_result = sentiment($('#txt').val())
+        const sentiment_result = sentiment($('#txt').val())
+        const results = {result: sentiment_result}        
         $('#result').text(JSON.stringify(sentiment_result, undefined, 2));
       });
     });
